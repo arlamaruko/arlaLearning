@@ -13,6 +13,17 @@ font = FontProperties(fname=r"c:\windows\fonts\SimSun.ttc", size=14)
 class1 = 1.5 * randn(100, 2)
 class2 = randn(100, 2) + array([5, 5])
 features = vstack((class1, class2))
+
+## 层次聚类
+
+# from PCV.clustering import hcluster
+# tree = hcluster.hcluster(features)
+# clusters = tree.extract_clusters(5)
+# print 'number of clusters:',len(clusters)
+# for c in clusters:
+# 	print c.get_cluster_elements()
+
+
 centroids, variance = kmeans(features, 2)
 code, distance = vq(features, centroids)
 figure()

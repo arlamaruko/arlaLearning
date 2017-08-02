@@ -6,14 +6,14 @@ Function: figure 6.4
 from scipy.cluster.vq import *
 from scipy.misc import imresize
 from pylab import *
-import Image
+from PIL import Image
 
 # 添加中文字体支持
 from matplotlib.font_manager import FontProperties
 font = FontProperties(fname=r"c:\windows\fonts\SimSun.ttc", size=14)
 
 steps = 100  # image is divided in steps*steps region
-infile = '../1/1001.jpg'
+infile = '../xxxraw/1151.jpg'
 im = array(Image.open(infile))
 dx = im.shape[0] / steps
 dy = im.shape[1] / steps

@@ -1,11 +1,12 @@
 import os
-import Image
+# import Image
+from PIL import Image
 from PCV.clustering import hcluster
 # create a list of images
 from matplotlib.pyplot import *
 from numpy import *
 
-path = 'D:\\GitHub\\PCV-translation-to-Chinese\\data\\sunsets\\flickr-sunsets-small\\'
+path = '../xxxraw/'
 imlist = [os.path.join(path, f) for f in os.listdir(path) if f.endswith('.jpg')]
 # extract feature vector (8 bins per color channel)
 features = zeros([len(imlist), 512])
