@@ -11,7 +11,7 @@ class_2 = 1.2 * randn(n,2) + array([5,1])
 labels = hstack((ones(n),-ones(n)))
 # save with Pickle
 #with open('points_normal.pkl', 'w') as f:
-with open('points_normal_test.pkl', 'w') as f:
+with open('points_normal.pkl', 'w') as f:
     pickle.dump(class_1,f)
     pickle.dump(class_2,f)
     pickle.dump(labels,f)
@@ -23,7 +23,7 @@ class_2 = hstack((r*cos(angle),r*sin(angle)))
 labels = hstack((ones(n),-ones(n)))
 # save with Pickle
 #with open('points_ring.pkl', 'w') as f:
-with open('points_ring_test.pkl', 'w') as f:
+with open('points_ring.pkl', 'w') as f:
     pickle.dump(class_1,f)
     pickle.dump(class_2,f)
     pickle.dump(labels,f)

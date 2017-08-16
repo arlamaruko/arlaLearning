@@ -3,6 +3,7 @@ import pickle
 from pylab import *
 from PCV.classifiers import knn
 from PCV.tools import imtools
+from PCV.classifiers import bayes
 
 pklist=['points_normal.pkl','points_ring.pkl']
 
@@ -14,15 +15,22 @@ for i, pklfile in enumerate(pklist):
         class_1 = pickle.load(f)
         class_2 = pickle.load(f)
         labels = pickle.load(f)
+
+    bc = bayes.BayesClassifier()
+    bc.train([class_1,class_2],[1,-1])
+
     # load test data using Pickle
     with open(pklfile[:-4]+'_test.pkl', 'r') as f:
         class_1 = pickle.load(f)
         class_2 = pickle.load(f)
         labels = pickle.load(f)
 
+    print bc.classify(class_1[:10])[0]
+
+
     model = knn.KnnClassifier(labels,vstack((class_1,class_2)))
     # test on the first point
-    print model.classify(class_1[0])
+    # print model.classify(class_1[0])
 
     #define function for plotting
     def classify(x,y,model=model):

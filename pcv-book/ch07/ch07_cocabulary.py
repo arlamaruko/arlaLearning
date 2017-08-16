@@ -5,7 +5,7 @@ from PCV.tools.imtools import get_imlist
 from PCV.localdescriptors import sift
 
 #获取图像列表
-imlist = get_imlist('./first500/')
+imlist = get_imlist('../xxraw/')
 nbr_images = len(imlist)
 #获取特征列表
 featlist = [imlist[i][:-3]+'sift' for i in range(nbr_images)]
@@ -19,6 +19,6 @@ voc = vocabulary.Vocabulary('ukbenchtest')
 voc.train(featlist, 1000, 10)
 #保存词汇
 # saving vocabulary
-with open('./first500/vocabulary.pkl', 'wb') as f:
+with open('../xxraw/vocabulary.pkl', 'wb') as f:
     pickle.dump(voc, f)
 print 'vocabulary is:', voc.name, voc.nbr_words
