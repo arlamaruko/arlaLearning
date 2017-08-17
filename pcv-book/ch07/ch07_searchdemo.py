@@ -16,7 +16,7 @@ class SearchDemo:
 
     def __init__(self):
         # 载入图像列表
-        self.path = './first500/'
+        self.path = '../xxraw/'
         #self.path = 'D:/python_web/isoutu/first500/'
         self.imlist = [os.path.join(self.path,f) for f in os.listdir(self.path) if f.endswith('.jpg')]
         #self.imlist = get_imlist('./first500/')
@@ -25,7 +25,7 @@ class SearchDemo:
         self.ndx = range(self.nbr_images)
 
         # 载入词汇
-        f = open('./first500/vocabulary.pkl', 'rb')
+        f = open('../xxraw/vocabulary.pkl', 'rb')
         self.voc = pickle.load(f)
         f.close()
 
@@ -46,7 +46,7 @@ class SearchDemo:
             """
 
     def index(self, query=None):
-        self.src = imagesearch.Searcher('testImaAdd.db', self.voc)
+        self.src = imagesearch.Searcher('../xxraw/testImaAdd.db', self.voc)
 
         html = self.header
         html += """

@@ -3,8 +3,8 @@ from PCV.tools import graphcut
 from PIL import Image
 from pylab import *
 
-im = array(Image.open("../1/1001.jpg"))
-im = imresize(im, 0.07)
+im = array(Image.open("../xxxraw/1156.jpg"))
+im = imresize(im, 0.08)
 size = im.shape[:2]
 
 # add two rectangular training regions

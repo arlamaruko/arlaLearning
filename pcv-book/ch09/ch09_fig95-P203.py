@@ -13,5 +13,10 @@ rim = array(rim, 'f')
 A = ncut.ncut_graph_matrix(rim, sigma_d=1, sigma_g=1e-2)
 # cluster
 code, V = ncut.cluster(A, k=3, ndim=3)
+codeim = imresize(code.reshape(wid,wid),(m,n),interp='bilinear')
+figure()
+imshow(codeim)
+gray()
+show()
+# imshow(imresize(code.reshape(wid,wid),(m,n),interp='bilinear'))
 
-imshow(imresize(V[i].reshape(wid,wid),(m,n),interp='bilinear'))

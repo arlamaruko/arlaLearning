@@ -7,16 +7,16 @@ from PCV.tools.imtools import get_imlist
 
 # load image list and vocabulary
 #载入图像列表
-imlist = get_imlist('./first500/')
+imlist = get_imlist('../xxraw/')
 nbr_images = len(imlist)
 #载入特征列表
 featlist = [imlist[i][:-3]+'sift' for i in range(nbr_images)]
 
 #载入词汇
-with open('./first500/vocabulary.pkl', 'rb') as f:
+with open('../xxraw/vocabulary.pkl', 'rb') as f:
     voc = pickle.load(f)
 
-src = imagesearch.Searcher('testImaAdd.db',voc)
+src = imagesearch.Searcher('../xxraw/testImaAdd.db',voc)
 
 # index of query image and number of results to return
 #查询图像索引和查询返回的图像数
@@ -61,5 +61,5 @@ res_geom = [res_reg[0]]+[s[0] for s in sorted_rank]
 print 'top matches (homography):', res_geom
 
 # 显示查询结果
-imagesearch.plot_results(src,res_reg[:8]) #常规查询
-imagesearch.plot_results(src,res_geom[:8]) #重排后的结果
+imagesearch.plot_results(src,res_reg[:10]) #常规查询
+imagesearch.plot_results(src,res_geom[:10]) #重排后的结果

@@ -9,7 +9,7 @@ from matplotlib.font_manager import FontProperties
 font = FontProperties(fname=r"c:\windows\fonts\SimSun.ttc", size=14)
 
 # 读入图像
-filename = '../data/fisherman.jpg'
+filename = 'ch10_P210_Reading-and-Writing-Images.png'
 im = cv2.imread(filename)
 # 转换颜色空间
 rgbIm = cv2.cvtColor(im, cv2.COLOR_BGR2RGB)

@@ -6,7 +6,7 @@ import scipy.misc
 
 
 #im = array(Image.open('../data/ceramic-houses_t0.png').convert("L"))
-im = array(Image.open('../data/flower32_t0.png').convert("L"))
+im = array(Image.open('../xxxraw/1183.jpg').convert("L"))
 figure()
 gray()
 subplot(131)
@@ -19,7 +19,7 @@ axis('off')
 imshow(U)
 
 #t = 0.4  # ceramic-houses_t0 threshold
-t = 0.8  # flower32_t0 threshold
+t = 0.4  # flower32_t0 threshold
 seg_im = U < t*U.max()
 #scipy.misc.imsave('ceramic-houses_t0_result.pdf', seg_im)
 scipy.misc.imsave('flower32_t0_result.pdf', seg_im)

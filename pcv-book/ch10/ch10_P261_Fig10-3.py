@@ -5,7 +5,7 @@ from pylab import *
 
 
 # 读入图像
-im = cv2.imread('../1/1001.jpg')
+im = cv2.imread('ch10_P210_Reading-and-Writing-Images.png')
 # 下采样
 im_lowres = cv2.pyrDown(im)
 # 转化为灰度图像
@@ -22,4 +22,4 @@ for k in keypoints[::10]:
 cv2.imshow('local descriptors', vis)
 cv2.waitKey()
 
-cv2.imwrite('../images/ch10/ch10_P261_Fig10-3.jpg',vis)
+cv2.imwrite('ch10_P261_Fig10-3.jpg',vis)
